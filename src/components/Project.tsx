@@ -74,11 +74,7 @@ export function Project({
             </p>
           </div>
           <div className=" shadow-custom bg-[#201809] mb-7 rounded p-8 pl-14 text-white relative text-[17px]">
-            <p>
-              Sistema de autenticação manualmente, que inclui funcionalidades
-              como login, cadastro, recuperação de senha e um dashboard básico
-              com a opção de alterar a senha do usuário.
-            </p>
+            <p>{text}</p>
           </div>
           <div>
             <ul
@@ -86,11 +82,9 @@ export function Project({
                 imgLeft ? "justify-end" : "justify-start"
               }  gap-4 text-[16px] text-[#A1A1A1] `}
             >
-              <li>React</li>
-              <li>Tailwind CSS</li>
-              <li>Material UI</li>
-              <li>node</li>
-              <li>MySQL</li>
+              {technologies.map((e, i) => {
+                return <li key={i}>{e}</li>;
+              })}
             </ul>
           </div>
         </div>

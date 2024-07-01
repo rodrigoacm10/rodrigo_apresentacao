@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link, Element } from "react-scroll";
+
 import { Section } from "./components/Section";
 import { FiGithub } from "react-icons/fi";
 import { MdOutlineWhatsapp } from "react-icons/md";
@@ -15,6 +17,7 @@ import jsImg from "./assets/jsIcon.png";
 import tsImg from "./assets/typeIcon.png";
 import nodeImg from "./assets/nodeIcon.png";
 import graphqlImg from "./assets/graphqlIcon.png";
+import dindinImg from "./assets/dindinPicture.png";
 
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
@@ -89,15 +92,61 @@ function App() {
         <div className=" px-4 max-w-[968px] w-full flex justify-between  ">
           <p className="font-semibold">Rodrigo Andrade</p>
 
-          <ul className="pr-4 flex items-center gap-5">
+          <ul className="pr-4 font-medium flex items-center gap-8">
             <li>
-              <a href="#home">a</a>
+              <Link
+                className={`${btnCSS[0]} cursor-pointer`}
+                to="home"
+                smooth={true}
+                duration={500}
+              >
+                Home
+              </Link>
+              {/* <a href="#home">a</a> */}
             </li>
             <li>
-              <a href="#projects">a</a>
+              <Link
+                className={`${btnCSS[0]} cursor-pointer`}
+                to="me"
+                smooth={true}
+                duration={500}
+              >
+                Sobre
+              </Link>
+              {/* <a href="#projects">a</a> */}
             </li>
             <li>
-              <a href="#home">a</a>
+              <Link
+                className={`${btnCSS[0]} cursor-pointer`}
+                to="skills"
+                smooth={true}
+                duration={500}
+              >
+                Habilidades
+              </Link>
+              {/* <a href="#projects">a</a> */}
+            </li>
+            <li>
+              <Link
+                className={`${btnCSS[0]} cursor-pointer`}
+                to="projects"
+                smooth={true}
+                duration={500}
+              >
+                Projetos
+              </Link>
+              {/* <a href="#projects">a</a> */}
+            </li>
+            <li>
+              <Link
+                className={`${btnCSS[0]} cursor-pointer`}
+                to="experience"
+                smooth={true}
+                duration={500}
+              >
+                Experiência
+              </Link>
+              {/* <a href="#projects">a</a> */}
             </li>
           </ul>
         </div>
@@ -147,11 +196,17 @@ function App() {
                 Front-End Developer
               </p>
               <p className="text-[#757575] mb-14">
-                Bem-vindo ao meu site portfolio! Tenho 20 anos, sou
-                desenvolvedor Full Stack apaixonado por tecnologia.
+                Bem-vindo ao meu site portfolio! Tenho 19 anos, sou
+                desenvolvedor Front End apaixonado por tecnologia.
               </p>
 
-              <button className={`${btnCSS[1]} `}>Fale Comigo</button>
+              <a
+                href="https://contate.me/rodrigoandradecm"
+                target="_blank"
+                className={`${btnCSS[1]} `}
+              >
+                Fale Comigo
+              </a>
             </div>
 
             <div className=" pl-1 hidden custom950:flex items-center justify-center">
@@ -199,19 +254,19 @@ function App() {
           {/* text-sm  */}
           <div className="flex custom800:text-[16px]  text-center custom:text-start gap-10 flex-col">
             <p className="text-[#757575] ">
-              Olá, sou Thiago Paiva, um desenvolvedor Full Stack sempre em busca
-              de aprendizado contínuo e pronto para enfrentar desafios
-              tecnológicos. Minha paixão pela programação, habilidades de equipe
-              e motivação para aprender me capacitam a entregar soluções de alta
-              qualidade tanto no front-end quanto no back-end.
+              Olá! Meu nome é Rodrigo Andrade e sou um desenvolvedor front-end
+              apaixonado por criar experiências web dinâmicas e envolventes. Com
+              experiência na indústria de tecnologia, tenho dedicado minha
+              carreira ao desenvolvimento de interfaces de usuário que são não
+              apenas visualmente atraentes, mas também intuitivas e acessíveis.
             </p>
 
             <p className="text-[#757575]">
-              Além disso, também trabalho como freelancer, o que me permite
-              colaborar em projetos empolgantes fora do meu trabalho principal.
-              Estou ansioso para contribuir em projetos desafiadores, combinando
-              minha paixão, habilidades e determinação para entregar soluções
-              digitais de qualidade.
+              Atualmente desenvolvo projetos utilizando JavaScript, HTML, CSS e
+              seus frameworks principalmente com React, Tailwind e Sass,
+              atualmente cursando faculdade de ciências da computação. Soluciono
+              problemas através da programação, onde busco sempre me inovar e
+              superar desafios, em todo o momento busco evolução.
             </p>
 
             <div className="flex justify-center custom:justify-start items-center ">
@@ -268,15 +323,17 @@ graphqlImg */}
         <Project
           imgLeft={true}
           title="Sistema de Gerenciamento"
-          text="Sistema de autenticação manualmente, que inclui funcionalidades como login, cadastro, recuperação de senha e um dashboard básico com a opção de alterar a senha do usuário."
-          technologies={["a1", "a2"]}
-          img={
-            "https://thiagopaiva.vercel.app/static/media/imagem.114c1a593630b962b4a9.jpg"
-          }
-          link={"https://www.youtube.com/watch?v=-FONyYPsiCs&t=70s"}
+          text="O projeto é um sistema de gestão completo, que centraliza atividades gerenciais, como: controle financeiro, gestão de estoque e vendas."
+          technologies={["React", "TailwindCSS", "MaterialUI", "node", "MySQL"]}
+          // img={
+          //   "https://thiagopaiva.vercel.app/static/media/imagem.114c1a593630b962b4a9.jpg"
+          // }
+          img={dindinImg}
+          // link={"https://www.youtube.com/watch?v=-FONyYPsiCs&t=70s"}
+          link={`https://66805d323d9dce8665cba681--frabjous-tulumba-2e7509.netlify.app/`}
         />
 
-        <Project
+        {/* <Project
           imgLeft={false}
           title="treste"
           text="aaaaaaaaaaaaaaaa"
@@ -285,11 +342,15 @@ graphqlImg */}
             "https://thiagopaiva.vercel.app/static/media/imagem.114c1a593630b962b4a9.jpg"
           }
           link={"https://www.youtube.com/watch?v=-FONyYPsiCs&t=70s"}
-        />
+        /> */}
       </Section>
 
       <div className="-mt-20"></div>
-      <Section title="Experiência" subtitle="Minha jornada pessoal">
+      <Section
+        id="experience"
+        title="Experiência"
+        subtitle="Minha jornada pessoal"
+      >
         <div className="mb-20   ">
           <div className="w-full grid grid-cols-2  mb-10 ">
             {/*
@@ -307,29 +368,69 @@ graphqlImg */}
               Educação
             </p>
           </div>{" "}
-          <div className="grid h-20 grid-cols-[1fr_80px_1fr] w-full">
-            <div className="bg-slate-20 flex -mr-10 justify-end">
-              <div className="max-w-[190px]">
-                <h3 className="font-medium mb-1">Ciências da Computação</h3>
-                <p className="text-[#757575] mb-4">Universidade Uninassau</p>
-                <p className="flex items-center gap-2">
-                  &#128197; Jan de 2023 - atualmente
-                </p>
+          <div className="flex flex-col gap-20">
+            {/* ----------------------------------------------- */}
+
+            <div className="grid h-20 grid-cols-[1fr_80px_1fr] gap-3 w-full">
+              <div className="bg-slate-20 flex -mr-10 justify-end">
+                <div className="max-w-[190px]">
+                  <h3 className="font-medium mb-1">
+                    Estágio em Desenvolvimento Web
+                  </h3>
+                  <p className="text-[#757575] mb-4">Recicont Contabilidade</p>
+                  <p className="flex items-center gap-2">
+                    &#128197; jan 2024 - jun 2024
+                  </p>
+                </div>
+              </div>
+              <div className="bg-slate-40 relative flex flex-col items-center">
+                <div className="rounded-full  bg-[#757575] w-[12px] h-[12px]"></div>
+                <div className="bg-[#757575] h-[140%]  absolute w-[1px]"></div>
+              </div>
+              <div className="bg-slate-60 flex justify-start"></div>
+            </div>
+
+            {/* ----------------------------------------------- */}
+
+            <div className="grid h-20 grid-cols-[1fr_80px_1fr]  gap-3  w-full">
+              <div className="bg-slate-20 flex -mr-10 justify-end">
+                <div className="max-w-[190px]">
+                  <h3 className="font-medium mb-1">
+                    Formação acelerada em programação
+                  </h3>
+                  <p className="text-[#757575] mb-4">Softex Pernambuco</p>
+                  <p className="flex items-center gap-2">
+                    &#128197; jun 2023 - jan 2024
+                  </p>
+                </div>
+              </div>
+              <div className="bg-slate-40 relative flex flex-col items-center">
+                <div className="rounded-full  bg-[#757575] w-[12px] h-[12px]"></div>
+                <div className="bg-[#757575] h-[140%]  absolute w-[1px]"></div>
+              </div>
+              <div className="bg-slate-60 flex justify-start"></div>
+            </div>
+
+            {/* ----------------------------------------------- */}
+
+            <div className="grid h-20 grid-cols-[1fr_80px_1fr]  gap-3  w-full">
+              <div className="bg-slate-20 flex -mr-10 justify-end"></div>
+              <div className="bg-slate-40 relative flex flex-col items-center">
+                <div className="rounded-full  bg-[#757575] w-[12px] h-[12px]"></div>
+                <div className="bg-[#757575] h-[120%]  absolute w-[1px]"></div>
+              </div>
+              <div className="bg-slate-60 flex justify-start">
+                <div className="max-w-[190px]">
+                  <h3 className="font-medium mb-1">Ciências da Computação</h3>
+                  <p className="text-[#757575] mb-4">Universidade Uninassau</p>
+                  <p className="flex items-center gap-2">
+                    &#128197; Jan 2023 - atualmente
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="bg-slate-40 relative flex flex-col items-center">
-              <div className="rounded-full  bg-[#757575] w-[12px] h-[12px]"></div>
-              <div className="bg-[#757575] h-full  absolute w-[1px]"></div>
-            </div>
-            <div className="bg-slate-60 flex justify-start">
-              <div className="max-w-[190px]">
-                <h3 className="font-medium mb-1">Ciências da Computação</h3>
-                <p className="text-[#757575] mb-4">Universidade Uninassau</p>
-                <p className="flex items-center gap-2">
-                  &#128197; Jan de 2023 - atualmente
-                </p>
-              </div>
-            </div>
+
+            {/* ----------------------------------------------- */}
           </div>
         </div>
       </Section>
@@ -347,11 +448,11 @@ graphqlImg */}
               <MdOutlineEmail size={28} className="mb-1" />
               <p className="font-semibold">Email</p>
               <p className="text-sm text-[#757575] mb-5">
-                thiagofellipe151@gmail.com
+                rodrigoacm10@gmail.com
               </p>
 
               <a
-                href="#"
+                href="mailto:rodrigoacm10@gmail.com"
                 onMouseEnter={(e) =>
                   setArrRight({
                     item1: true,
@@ -377,14 +478,13 @@ graphqlImg */}
             </div>
 
             <div className="flex flex-col items-center justify-center mb-5 p-5 w-[300px] bg-white rounded-xl border-[1.75px]">
-              <MdOutlineEmail size={28} className="mb-1" />
-              <p className="font-semibold">Email</p>
-              <p className="text-sm text-[#757575] mb-5">
-                thiagofellipe151@gmail.com
-              </p>
+              <MdOutlineWhatsapp size={28} className="mb-1" />
+              <p className="font-semibold">whatsapp</p>
+              <p className="text-sm text-[#757575] mb-5">+55 (81) 99335-3017</p>
 
               <a
-                href="#"
+                href="https://contate.me/rodrigoandradecm"
+                target="_blank"
                 onMouseEnter={(e) =>
                   setArrRight({
                     item1: false,
@@ -449,9 +549,16 @@ graphqlImg */}
                 </div>
 
                 <div className="flex justify-start w-full mt-4">
-                  <button type="submit" className={`${btnCSS}`}>
+                  {/* <button type="submit" className={`${btnCSS}`}>
                     Enviar
-                  </button>
+                  </button> */}
+                  <a
+                    href="https://contate.me/rodrigoandradecm"
+                    target="_blank"
+                    className={`${btnCSS[1]} `}
+                  >
+                    Enviar
+                  </a>
                 </div>
                 {/* <textarea /> */}
               </div>
