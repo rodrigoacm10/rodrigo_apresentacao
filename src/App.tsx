@@ -5,6 +5,7 @@ import { MdOutlineWhatsapp } from "react-icons/md";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { Project } from "./components/Project";
 
+import curriculo from "./assets/RODRIGO_ANDRADE.pdf";
 import perfilImg from "./assets/perfil.jpeg";
 import reactImg from "./assets/reactIcon.png";
 import nextImg from "./assets/nextIcon.png";
@@ -16,11 +17,13 @@ import nodeImg from "./assets/nodeIcon.png";
 import graphqlImg from "./assets/graphqlIcon.png";
 
 import { FaArrowRight } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { MdOutlineCalendarMonth } from "react-icons/md";
 import { RiGraduationCapLine } from "react-icons/ri";
 import { BsSuitcaseLg } from "react-icons/bs";
 import { LogoImg } from "./components/LogoImg";
+import { PiMouseSimpleBold } from "react-icons/pi";
 
 function App() {
   const [exitBox, setExitBox] = useState("h-[100vh] ");
@@ -38,8 +41,7 @@ function App() {
     "duration-500 transition hover:bg-[#BF9E69] hover:-translate-y-1 hover:scale-105 bg-[#201809] py-5 px-8 rounded-xl text-white",
   ];
 
-  useEffect(() => {
-    // setTimeout(() => ,)
+  const startAnimated = () => {
     const timer = setTimeout(() => {
       // myFunction();
       setExitBox("boxToExit h-[0vh] ");
@@ -52,12 +54,22 @@ function App() {
         // myFunction();
         setExitBox("boxToExit h-[0vh] ");
         setNameExit({
-          first: "  hidden",
-          second: "  hidden",
+          first: " opacity-0 ",
+          second: "  opacity-0 ",
         });
       }, 500);
     }, 3000);
+  };
+
+  useEffect(() => {
+    // setTimeout(() => ,)
+    startAnimated();
   }, []);
+
+  // useEffect(() => {
+  //   // setTimeout(() => ,)
+  //   startAnimated();
+  // }, []);
 
   return (
     <div className={`relative  bg-[#fafafa] min-h-screen font-custom `}>
@@ -73,11 +85,11 @@ function App() {
           <span className={`${nameExit.second}`}>Desenvolvedor</span>
         </p>
       </div>
-      <div className="fixed bg-white w-screen z-30 flex justify-center py-4 ">
-        <div className="max-w-[968px] w-full flex justify-between  ">
+      <div className="fixed opacity-0 md:opacity-100 bg-white w-screen z-30 flex justify-center py-4 ">
+        <div className=" px-4 max-w-[968px] w-full flex justify-between  ">
           <p className="font-semibold">Rodrigo Andrade</p>
 
-          <ul className="flex items-center gap-5">
+          <ul className="pr-4 flex items-center gap-5">
             <li>
               <a href="#home">a</a>
             </li>
@@ -92,72 +104,101 @@ function App() {
       </div>
       <Section id="home">
         {/* grid-rows-[min-content_1fr_min-content] */}
-        <div className="grid gap-4 grid-cols-[120px_1fr_1fr]">
-          <div className=" ">
-            <ul className="h-full flex flex-col gap-8 justify-center">
-              <li className="flex w-[25px] ">
-                <a
-                  className={` ${btnCSS[0]}   hover:-translate-y-1 `}
-                  href="https://contate.me/rodrigoandradecm"
-                  target="_blank"
-                >
-                  <MdOutlineWhatsapp size={27} />
-                </a>
-              </li>
-              <li className="flex w-[25px]">
-                <a
-                  className={` ${btnCSS[0]}    hover:-translate-y-1`}
-                  target="_blank"
-                  href="https://www.linkedin.com/in/rodrigo-andrade-5420b2277/"
-                >
-                  <SlSocialLinkedin size={27} />
-                </a>
-              </li>
-              <li className="flex w-[25px]">
-                <a
-                  className={` ${btnCSS[0]}  hover:-translate-y-1  `}
-                  target="_blank"
-                  href="https://github.com/rodrigoacm10"
-                >
-                  <FiGithub size={27} />
-                </a>
-              </li>
-            </ul>
+        <div className="flex flex-col gap-20">
+          <div className="grid gap-4 custom950:grid-cols-[120px_1fr_1fr] grid-cols-[120px_1fr]">
+            <div className=" ">
+              <ul className="h-full flex flex-col gap-8 justify-center">
+                <li className="flex w-[25px] ">
+                  <a
+                    className={` ${btnCSS[0]}   hover:-translate-y-1 `}
+                    href="https://contate.me/rodrigoandradecm"
+                    target="_blank"
+                  >
+                    <MdOutlineWhatsapp size={27} />
+                  </a>
+                </li>
+                <li className="flex w-[25px]">
+                  <a
+                    className={` ${btnCSS[0]}    hover:-translate-y-1`}
+                    target="_blank"
+                    href="https://www.linkedin.com/in/rodrigo-andrade-5420b2277/"
+                  >
+                    <SlSocialLinkedin size={27} />
+                  </a>
+                </li>
+                <li className="flex w-[25px]">
+                  <a
+                    className={` ${btnCSS[0]}  hover:-translate-y-1  `}
+                    target="_blank"
+                    href="https://github.com/rodrigoacm10"
+                  >
+                    <FiGithub size={27} />
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className=" ">
+              <h2 className="font-semibold text-5xl leading-snug mb-2">
+                Rodrigo Andrade
+              </h2>
+              <p className="flex items-center gap-2 text-xl mb-4  ">
+                <span className="block w-[100px] h-[1px] bg-black"></span>{" "}
+                Front-End Developer
+              </p>
+              <p className="text-[#757575] mb-14">
+                Bem-vindo ao meu site portfolio! Tenho 20 anos, sou
+                desenvolvedor Full Stack apaixonado por tecnologia.
+              </p>
+
+              <button className={`${btnCSS[1]} `}>Fale Comigo</button>
+            </div>
+
+            <div className=" pl-1 hidden custom950:flex items-center justify-center">
+              <img
+                src={perfilImg}
+                className="rounded"
+                alt="foto Rodrigo Andrade"
+              />
+            </div>
           </div>
-
-          <div className=" ">
-            <h2 className="font-semibold text-5xl leading-snug mb-2">
-              Rodrigo Andrade
-            </h2>
-            <p className="flex items-center gap-2 text-xl mb-4  ">
-              <span className="block w-[100px] h-[1px] bg-black"></span>{" "}
-              Front-End Developer
-            </p>
-            <p className="text-[#757575] mb-14">
-              Bem-vindo ao meu site portfolio! Tenho 20 anos, sou desenvolvedor
-              Full Stack apaixonado por tecnologia.
-            </p>
-
-            <button className={`${btnCSS[1]} `}>Fale Comigo</button>
-          </div>
-
-          <div className="  flex items-center justify-center">
-            <img
-              src={perfilImg}
-              className="rounded"
-              alt="foto Rodrigo Andrade"
-            />
+          <div className="  ml-[136px]">
+            <button
+              onClick={() => {
+                setExitBox("boxToEnter h-[100vh] ");
+                setTimeout(() => {
+                  setNameExit({
+                    first: "nameRotate ",
+                    second: "nameRotate2 ",
+                  });
+                  startAnimated();
+                }, 750);
+              }}
+              className={`${btnCSS[0]}   flex gap-2 items-center`}
+            >
+              {" "}
+              <PiMouseSimpleBold size={20} />
+              Scroll Down
+              <FaArrowDown />
+            </button>
           </div>
         </div>
       </Section>
 
       <Section id="me" title="Sobre mim" subtitle="Introdução">
-        <div className="grid grid-cols-2">
-          <div className="flex justify-center items-start">
-            <img src={perfilImg} className="rounded" alt="perfil" />
+        <div className="grid  justify-center   custom:grid-cols-2 gap-10">
+          <div className=" flex  ml-auto mr-auto justify-center     w-[80%]">
+            <div className="flex   justify-center items-start">
+              <img
+                src={perfilImg}
+                className=" flex items-center justify-center rounded"
+                alt="perfil"
+              />
+            </div>
           </div>
-          <div className="flex gap-10 flex-col">
-            <p className="text-[#757575]">
+          {/* text-sm  */}
+          <div className="flex custom800:text-[16px]  text-center custom:text-start gap-10 flex-col">
+            <p className="text-[#757575] ">
               Olá, sou Thiago Paiva, um desenvolvedor Full Stack sempre em busca
               de aprendizado contínuo e pronto para enfrentar desafios
               tecnológicos. Minha paixão pela programação, habilidades de equipe
@@ -173,8 +214,10 @@ function App() {
               digitais de qualidade.
             </p>
 
-            <div>
-              <button className={`${btnCSS[1]}`}>Baixar Currículo</button>
+            <div className="flex justify-center custom:justify-start items-center ">
+              <a href={curriculo} target="_blank" className={`${btnCSS[1]}`}>
+                Baixar Currículo
+              </a>
             </div>
           </div>
         </div>
@@ -295,7 +338,7 @@ graphqlImg */}
       </div>
 
       <Section title="Contato" subtitle="Formas de contato" white={true}>
-        <div className="grid gap-10 grid-cols-2 min-w-[600px]  mb-[475px]">
+        <div className="grid gap-10 custom800:items-start items-center justify-center custom800:grid-cols-2 min-w-[600px]  mb-[475px]">
           <div className="flex flex-col items-center justify-start  bg-slate-20 min-w-[300px]">
             <h3 className="text-center text-[18px] mb-7 font-medium ">
               Entre em contato

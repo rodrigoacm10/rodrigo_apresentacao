@@ -5,7 +5,7 @@ type LogoImgProps = {
 
 export function LogoImg({ img, name }: LogoImgProps) {
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex lg:w-[100%] custom600:w-[65px] w-[52px] flex-col items-center gap-2">
       <img
         src={`${img}`}
         // className="rounded"
