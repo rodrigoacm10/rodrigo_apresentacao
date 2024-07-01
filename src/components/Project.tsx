@@ -18,7 +18,7 @@ export function Project({
   img,
 }: ProjectProps) {
   return (
-    <div className="w-full mb-[125px] grid grid-cols-12 gap-2 ">
+    <div className=" custom800:w-full w-[90px] custom600:ml-[0px] ml-[-50px]  mb-[125px] grid grid-cols-12 gap-2 ">
       <div
         className={`${imgLeft ? "project_image" : "project_image2"}  
      flex items-center justify-end`}

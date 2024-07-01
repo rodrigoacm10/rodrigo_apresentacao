@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Element } from "react-scroll";
+import { Link } from "react-scroll";
 
 import { Section } from "./components/Section";
 import { FiGithub } from "react-icons/fi";
@@ -22,7 +22,7 @@ import dindinImg from "./assets/dindinPicture.png";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-import { MdOutlineCalendarMonth } from "react-icons/md";
+
 import { RiGraduationCapLine } from "react-icons/ri";
 import { BsSuitcaseLg } from "react-icons/bs";
 import { LogoImg } from "./components/LogoImg";
@@ -45,7 +45,7 @@ function App() {
   ];
 
   const startAnimated = () => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       // myFunction();
       setExitBox("boxToExit h-[0vh] ");
       setNameExit({
@@ -439,7 +439,7 @@ graphqlImg */}
       </div>
 
       <Section title="Contato" subtitle="Formas de contato" white={true}>
-        <div className="grid gap-10 custom800:items-start items-center justify-center custom800:grid-cols-2 min-w-[600px]  mb-[475px]">
+        <div className="grid gap-10 custom800:items-start items-center justify-center custom800:grid-cols-2 custom800:min-w-[600px]  mb-[475px]">
           <div className="flex flex-col items-center justify-start  bg-slate-20 min-w-[300px]">
             <h3 className="text-center text-[18px] mb-7 font-medium ">
               Entre em contato
@@ -453,13 +453,13 @@ graphqlImg */}
 
               <a
                 href="mailto:rodrigoacm10@gmail.com"
-                onMouseEnter={(e) =>
+                onMouseEnter={() =>
                   setArrRight({
                     item1: true,
                     item2: false,
                   })
                 }
-                onMouseLeave={(e) =>
+                onMouseLeave={() =>
                   setArrRight({
                     item1: false,
                     item2: false,
@@ -485,13 +485,13 @@ graphqlImg */}
               <a
                 href="https://contate.me/rodrigoandradecm"
                 target="_blank"
-                onMouseEnter={(e) =>
+                onMouseEnter={() =>
                   setArrRight({
                     item1: false,
                     item2: true,
                   })
                 }
-                onMouseLeave={(e) =>
+                onMouseLeave={() =>
                   setArrRight({
                     item1: false,
                     item2: false,
