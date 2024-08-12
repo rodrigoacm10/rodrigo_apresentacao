@@ -18,6 +18,7 @@ import tsImg from "./assets/typeIcon.png";
 import nodeImg from "./assets/nodeIcon.png";
 import graphqlImg from "./assets/graphqlIcon.png";
 import dindinImg from "./assets/dindinPicture.png";
+import ordersyncImg from "./assets/orderSyncpircture.png";
 
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
@@ -255,7 +256,7 @@ function App() {
           <div className="flex custom800:text-[16px]  text-center custom:text-start gap-10 flex-col">
             <p className="text-[#757575] ">
               Olá! Meu nome é Rodrigo Andrade e sou um desenvolvedor front-end
-              apaixonado por criar experiências web dinâmicas e envolventes. Com
+              que busca criar experiências web dinâmicas e envolventes. Com
               experiência na indústria de tecnologia, tenho dedicado minha
               carreira ao desenvolvimento de interfaces de usuário que são não
               apenas visualmente atraentes, mas também intuitivas e acessíveis.
@@ -324,13 +325,39 @@ graphqlImg */}
           imgLeft={true}
           title="Sistema de Gerenciamento"
           text="O projeto é um sistema de gestão completo, que centraliza atividades gerenciais, como: controle financeiro, gestão de estoque e vendas."
-          technologies={["React", "TailwindCSS", "MaterialUI", "node", "MySQL"]}
+          technologies={[
+            "React",
+            "TailwindCSS",
+            "MaterialUI",
+            "node",
+            "Postgres",
+          ]}
           // img={
           //   "https://thiagopaiva.vercel.app/static/media/imagem.114c1a593630b962b4a9.jpg"
           // }
           img={dindinImg}
           // link={"https://www.youtube.com/watch?v=-FONyYPsiCs&t=70s"}
-          link={`https://66805d323d9dce8665cba681--frabjous-tulumba-2e7509.netlify.app/`}
+          link={`https://dindinbolso.netlify.app/`}
+        />
+
+        <Project
+          imgLeft={false}
+          title="Controle de produção "
+          text="resolve problemas de fila de produção durante grande movimentação de vendas, organizando registros de 
+pedidos a fim de gerar eficiência e agilidade no atendimento"
+          technologies={[
+            "NextJs",
+            "TypeScript",
+            "TailwindCSS",
+            "Shadcnui",
+            "Postgres",
+          ]}
+          // img={
+          //   "https://thiagopaiva.vercel.app/static/media/imagem.114c1a593630b962b4a9.jpg"
+          // }
+          img={ordersyncImg}
+          // link={"https://www.youtube.com/watch?v=-FONyYPsiCs&t=70s"}
+          link={`https://ordersync.vercel.app/`}
         />
 
         {/* <Project
